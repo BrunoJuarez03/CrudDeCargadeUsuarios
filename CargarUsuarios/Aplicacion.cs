@@ -15,6 +15,8 @@ namespace CargarUsuarios
     {
         public string AccionGuardar;
 
+        public string ConnectionString;
+
         public void ActivarFormulario()
         {
             txtCompañia.Text = string.Empty;
@@ -63,7 +65,7 @@ namespace CargarUsuarios
 
         public void CargarTabladeUsuarios()
         {
-            string ConnectionString = "Server=localhost;uid=root;pwd=45061858;database=mayorista;";
+            
             string myquery = "SELECT * FROM usuarios;";
             DataTable dataTable = new DataTable();
 
@@ -89,7 +91,7 @@ namespace CargarUsuarios
 
         public void EjecutarQuery(string query)
         {
-            string ConnectionString = "Server=localhost;uid=root;pwd=45061858;database=mayorista;";
+            
             try
             {
                 MySqlConnection con = new MySqlConnection(ConnectionString);
@@ -106,12 +108,14 @@ namespace CargarUsuarios
             }
         }
 
-        public Aplicacion()
+        public Aplicacion(string connectionString)
         {
             InitializeComponent();
+            ConnectionString = connectionString;
             CargarTabladeUsuarios();
             DesactivarFormulario();
-
+            
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -184,7 +188,7 @@ namespace CargarUsuarios
             int selectedrowofindex = dgvUsuarios.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dgvUsuarios.Rows[selectedrowofindex];
             int id = Convert.ToInt32(selectedRow.Cells["idusuario"].Value);
-            DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Està seguro?", "Eliminar Usuario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 string query = "DELETE FROM usuarios WHERE idusuario=" + id + ";";
