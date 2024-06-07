@@ -91,15 +91,16 @@ namespace CargarUsuarios
             else
             {
                 ejecutarQuery(connectionString, query);
+                DialogResult dialogResult = MessageBox.Show("Desea crear una la tabla de usuarios?", "Base de datos creada.", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string connectionString1 = "Server=" + server + ";uid=" + usuario + ";pwd=" + contraseña + ";database=" + dt + ";";
+                    string query1 = "create table usuarios(idusuario int auto_increment, correo varchar(255), contraseña varchar(255), compañia varchar(255), direccion varchar(1000), numero varchar(255), primary key(idusuario));";
+                    ejecutarQuery(connectionString1, query1);
+                }
             }
 
-            DialogResult dialogResult = MessageBox.Show("Desea crear una la tabla de usuarios?", "Base de datos creada.", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                string connectionString1 = "Server=" + server + ";uid=" + usuario + ";pwd=" + contraseña + ";database="+dt+";";
-                string query1 = "create table usuarios(idusuario int auto_increment, correo varchar(255), contraseña varchar(255), compañia varchar(255), direccion varchar(1000), numero varchar(255), primary key(idusuario));";
-                ejecutarQuery(connectionString1, query1);
-            }
+            
 
         }
     }
