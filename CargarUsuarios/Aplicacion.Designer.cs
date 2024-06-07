@@ -45,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCrearTabla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,6 +203,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(810, 120);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(264, 32);
@@ -210,6 +212,16 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnCrearTabla
+            // 
+            this.btnCrearTabla.Location = new System.Drawing.Point(12, 556);
+            this.btnCrearTabla.Name = "btnCrearTabla";
+            this.btnCrearTabla.Size = new System.Drawing.Size(500, 35);
+            this.btnCrearTabla.TabIndex = 17;
+            this.btnCrearTabla.Text = "Crear tabla de usuarios.";
+            this.btnCrearTabla.UseVisualStyleBackColor = true;
+            this.btnCrearTabla.Click += new System.EventHandler(this.btnCrearTabla_Click);
+            // 
             // Aplicacion
             // 
             this.AcceptButton = this.btnGuardar;
@@ -217,6 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1086, 596);
+            this.Controls.Add(this.btnCrearTabla);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label5);
@@ -261,5 +274,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCrearTabla;
     }
 }

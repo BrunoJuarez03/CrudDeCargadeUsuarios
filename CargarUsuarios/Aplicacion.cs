@@ -114,8 +114,6 @@ namespace CargarUsuarios
             ConnectionString = connectionString;
             CargarTabladeUsuarios();
             DesactivarFormulario();
-            
-            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -195,6 +193,16 @@ namespace CargarUsuarios
                 EjecutarQuery(query);
             }
             DesactivarFormulario();
+        }
+
+        private void btnCrearTabla_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Desea crear una la tabla de usuarios?", "Base de datos creada.", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {                string query1 = "create table usuarios(idusuario int auto_increment, correo varchar(255), contraseña varchar(255), compañia varchar(255), direccion varchar(1000), numero varchar(255), primary key(idusuario));";
+                EjecutarQuery( query1);
+                CargarTabladeUsuarios();
+            }
         }
     }
 }
