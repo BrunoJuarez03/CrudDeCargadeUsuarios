@@ -35,4 +35,4 @@ Las funciones de la aplicacion son bastante intuitivas, al clickear en una de es
 
 Para editar los datos de un usuario seleccionaremos con un click en la tabla al usuario deseado y presionaremos el boton "Editar usuario", los datos se cargaran al formulario y podremos editarlos sin problema, una vez hecho le damos a guardar y los datos seran actualizados. De la misma manera, si deseamos eliminar un registro de la tabla tendremos que seleccionarlo con un click y presionar el boton "Eliminar usuario", se nos presentara una ventana si estamos seguros y sera eliminado el registro.
 
-## 
+
